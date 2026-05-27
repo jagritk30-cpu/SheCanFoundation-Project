@@ -33,8 +33,8 @@ The application is designed to stand out with a clean NGO-focused interface, ani
 
 3. Open the app in your browser:
 
-   - Frontend: `http://localhost:4000`
-   - Admin panel: `http://localhost:4000/admin`
+   - Frontend: `https://shecanfoundation-project.vercel.app`
+   - Admin panel: `https://shecanfoundation-project.vercel.app/admin`
 
 ### Admin credentials
 
@@ -56,6 +56,10 @@ The application is designed to stand out with a clean NGO-focused interface, ani
 ## GitHub repository
 
 - Repository: `https://github.com/jagritk30-cpu/SheCanFoundation-Project`
+
+## Live demo
+
+- Production: `https://shecanfoundation-project.vercel.app`
 
 ## Deployment
 
