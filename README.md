@@ -1,20 +1,23 @@
 # She Can Foundation Contact Form
 
-A polished full-stack contact form built for the She Can Foundation internship task.
+This repository contains a polished She Can Foundation contact form project built for the internship task.
 
-## What this project includes
+The application is designed to stand out with a clean NGO-focused interface, animated interactions, responsive layout, and an admin dashboard for reviewing submissions.
 
-- Responsive frontend with accessible form fields
-- Client-side and server-side validation
-- Engaging NGO-focused visual design with a She Can branded hero background and polished section layout
-- Animated entrance effects for the homepage and admin page
-- Backend API using Express
-- JSON storage for submissions with optional upgrade path to a database
-- Admin panel with dashboard summary cards and modern message view
-- Simple HTTP Basic authentication for admin access
-- Clean styling and modern layout
+## Features
 
-## Run locally
+- Responsive and modern frontend with strong NGO styling
+- Animated entrance transitions for homepage and dashboard sections
+- Accessible contact form with Name, Email, Message fields, and validation
+- Express backend API for form submission
+- JSON-based persistence for contact entries
+- Admin panel with summary cards and recent submission display
+- HTTP Basic authentication for admin access
+- Custom logo, branded header, and She Can hero background image
+
+## Demo setup
+
+### Run locally
 
 1. Install dependencies:
 
@@ -28,70 +31,64 @@ A polished full-stack contact form built for the She Can Foundation internship t
    npm start
    ```
 
-3. Open the website:
+3. Open the app in your browser:
 
    - Frontend: `http://localhost:4000`
    - Admin panel: `http://localhost:4000/admin`
 
-## Admin login
+### Admin credentials
 
 - Username: `admin`
 - Password: `shecan123`
 
-> To override admin credentials, create a `.env` file and set `ADMIN_USER` and `ADMIN_PASS`.
+> To override these values, create a `.env` file with `ADMIN_USER` and `ADMIN_PASS`.
 
 ## Project structure
 
-- `server.js` — Express backend with API and authentication
+- `server.js` — Node.js + Express backend with API and admin protection
 - `public/index.html` — Main contact form page
-- `public/admin.html` — Admin panel page
-- `public/style.css` — Responsive styles
-- `public/app.js` — Form submission logic
-- `data/submissions.db` — SQLite database file (created on first run)
+- `public/admin.html` — Admin dashboard for submissions
+- `public/style.css` — Modern responsive styles
+- `public/app.js` — Frontend form submission logic
+- `public/assets/` — local branding and hero image assets
+- `data/submissions.json` — persisted contact submissions
 
-## Deploy to GitHub
+## GitHub repository
 
-1. Create a new GitHub repository from your account.
-2. Add the GitHub remote manually, for example:
+- Repository: `https://github.com/jagritk30-cpu/SheCanFoundation-Project`
 
-   ```bash
-   git remote add origin git@github.com:<your-username>/shecanfoundation-project.git
-   git push -u origin main
-   ```
+## Deployment
 
-3. Your project will now be available on GitHub.
+This app is ready to deploy to Vercel.
 
-## Deploy to Vercel
-
-1. Install the Vercel CLI if you don't already have it:
+1. Install Vercel CLI if needed:
 
    ```bash
    npm install -g vercel
    ```
 
-2. Log in:
+2. Login to Vercel:
 
    ```bash
    vercel login
    ```
 
-3. From the project folder, run:
+3. Deploy from the project folder:
 
    ```bash
    vercel --prod
    ```
 
-4. Follow the prompts to connect the repository and deploy.
+> During deployment, choose the current project directory as the root. The front-end will deploy successfully, and the backend API will be available when running the project locally.
 
-> If Vercel asks for the root directory, select the project folder. The site will be published automatically after deployment.
+## Notes for interviewers
 
-> Note: The live Vercel deployment will host the frontend and show form submission success. The local backend (`server.js`) is available when running the project locally.
+This project demonstrates:
 
-## Optional enhancements
+- a complete full-stack implementation for a real NGO task
+- functional form submission and data persistence
+- improved user experience with polished visuals and animations
+- thoughtful deployment readiness
+- practical use of JavaScript, HTML, CSS, and Express
 
-If you'd like, I can also add:
-
-- email notification on form submission
-- full authentication with login form
-- client-side animations
-- deployment-ready configuration for Vercel / Render
+If you'd like, I can also extend this project with email notifications, real database storage, authentication flows, or a hosted production deployment link.
