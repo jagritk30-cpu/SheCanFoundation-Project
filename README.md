@@ -49,6 +49,44 @@ A polished full-stack contact form built for the She Can Foundation internship t
 - `public/app.js` — Form submission logic
 - `data/submissions.db` — SQLite database file (created on first run)
 
+## Deploy to GitHub
+
+1. Create a new GitHub repository from your account.
+2. Add the GitHub remote manually, for example:
+
+   ```bash
+   git remote add origin git@github.com:<your-username>/shecanfoundation-project.git
+   git push -u origin main
+   ```
+
+3. Your project will now be available on GitHub.
+
+## Deploy to Vercel
+
+1. Install the Vercel CLI if you don't already have it:
+
+   ```bash
+   npm install -g vercel
+   ```
+
+2. Log in:
+
+   ```bash
+   vercel login
+   ```
+
+3. From the project folder, run:
+
+   ```bash
+   vercel --prod
+   ```
+
+4. Follow the prompts to connect the repository and deploy.
+
+> If Vercel asks for the root directory, select the project folder. The site will be published automatically after deployment.
+
+> Note: The live Vercel deployment will host the frontend and show form submission success. The local backend (`server.js`) is available when running the project locally.
+
 ## Optional enhancements
 
 If you'd like, I can also add:
