@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - She Can Foundation Submissions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header admin-header">
+      <a class="brand" href="/">
+        <img src="assets/logo.svg" alt="She Can Foundation logo" />
+        <span>She Can Admin</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/admin">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="page-shell admin-page">
+      <section class="dashboard-top fade-up">
+        <div>
+          <span class="eyebrow">Admin Dashboard</span>
+          <h1>Review form submissions</h1>
+          <p>Track incoming requests, view user messages, and stay connected with every story sent through the contact form.</p>
+        </div>
+      </section>
+
+      <section class="dashboard-grid fade-up delay-1" id="dashboard-summary">
+        <div class="dashboard-card loading-card">
+          <p>Loading summary...</p>
+        </div>
+      </section>
+
+      <section class="submissions-card fade-up delay-2">
+        <div class="submissions-card-header">
+          <div>
+            <h2>Recent messages</h2>
+            <p>See the newest contact form submissions and follow up with each inquiry.</p>
+          </div>
+        </div>
+        <div id="submissions-list" class="submissions-list">
+          <p>Loading submissions...</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function createSummaryCards(submissions) {
+        const total = submissions.length;
+        const latest = submissions[0];
+        const recentEmail = latest ? latest.email : '—';
+        return `
+          <div class="dashboard-card">
+            <span>Total submissions</span>
+            <strong>${total}</strong>
+          </div>
+          <div class="dashboard-card">
+            <span>Most recent</span>
+            <strong>${latest ? latest.name : 'No data'}</strong>
+            <small>${latest ? new Date(latest.created_at).toLocaleString() : ''}</small>
+          </div>
+          <div class="dashboard-card">
+            <span>Latest email</span>
+            <strong>${recentEmail}</strong>
+          </div>
+        `;
+      }
+
+      async function loadSubmissions() {
+        try {
+          const response = await fetch('/api/admin/submissions');
+          const list = document.getElementById('submissions-list');
+          const summary = document.getElementById('dashboard-summary');
+
+          if (!response.ok) {
+            if (response.status === 401) {
+              list.innerHTML = '<p class="error">Access denied. Please log in through browser Basic Auth to continue.</p>';
+              summary.innerHTML = '';
+              return;
+            }
+            throw new Error('Failed to load data.');
+          }
+
+          const submissions = await response.json();
+          if (!submissions.length) {
+            list.innerHTML = '<p>No submissions yet. Send a message through the homepage form.</p>';
+            summary.innerHTML = createSummaryCards([]);
+            return;
+          }
+
+          summary.innerHTML = createSummaryCards(submissions);
+          list.innerHTML = submissions.map(item => `
+            <article class="submission-item">
+              <div class="submission-header">
+                <div>
+                  <strong>${item.name}</strong>
+                  <p class="submission-email"><a href="mailto:${item.email}">${item.email}</a></p>
+                </div>
+                <span>${new Date(item.created_at).toLocaleString()}</span>
+              </div>
+              <p>${item.message}</p>
+            </article>
+          `).join('');
+        } catch (error) {
+          document.getElementById('submissions-list').innerHTML = `<p class="error">${error.message}</p>`;
+          document.getElementById('dashboard-summary').innerHTML = '';
+        }
+      }
+
+      loadSubmissions();
+    </script>
+  </body>
+</html>

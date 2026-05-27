@@ -1,0 +1,31 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eaf5ff"/>
+      <stop offset="100%" stop-color="#cce0ff"/>
+    </linearGradient>
+    <linearGradient id="fig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2856a3"/>
+      <stop offset="100%" stop-color="#1a3f77"/>
+    </linearGradient>
+    <linearGradient id="dress" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a3c5ff"/>
+      <stop offset="100%" stop-color="#5b8ee8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#sky)"/>
+  <circle cx="240" cy="180" r="140" fill="#ffffff" fill-opacity="0.18"/>
+  <circle cx="980" cy="120" r="100" fill="#ffffff" fill-opacity="0.14"/>
+  <circle cx="820" cy="540" r="180" fill="#ffffff" fill-opacity="0.1"/>
+
+  <path d="M330 510C272 520 200 470 186 400C172 330 212 260 270 250C328 240 385 290 401 360C417 430 388 500 330 510Z" fill="url(#dress)"/>
+  <path d="M312 250C298 210 320 160 360 150C400 140 450 170 464 210C478 250 452 300 410 310C368 320 326 290 312 250Z" fill="url(#fig)"/>
+  <path d="M310 510C280 520 240 500 220 460C200 420 220 380 257 368C294 356 331 372 348 406C365 440 352 496 310 510Z" fill="#1e4076" opacity="0.15"/>
+
+  <path d="M610 560C620 540 640 520 668 516C732 504 784 550 788 616C792 682 726 714 668 706C610 698 600 620 610 560Z" fill="#ffffff" fill-opacity="0.12"/>
+  <path d="M720 445C690 430 670 390 670 345C670 300 690 260 720 250C750 240 780 258 795 287C810 316 798 360 760 376C722 392 730 460 720 445Z" fill="url(#fig)"/>
+  <path d="M700 540C680 510 658 470 660 430C662 390 690 360 725 346C760 332 800 346 818 376C836 406 840 460 830 500C820 540 760 570 700 540Z" fill="url(#dress)"/>
+
+  <path d="M860 540C860 520 854 500 840 486C826 472 802 468 784 478C766 488 758 510 760 530C762 550 780 566 804 572C828 578 850 568 860 540Z" fill="#1a3f77"/>
+  <path d="M860 474C842 454 826 432 812 408C820 420 832 430 840 444C848 458 852 470 860 474Z" fill="#ffffff" fill-opacity="0.25"/>
+</svg>

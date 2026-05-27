@@ -1,0 +1,7 @@
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="14" fill="#1F4C90"/>
+  <path d="M16 16C16 12.6863 18.6863 10 22 10H34C37.3137 10 40 12.6863 40 16V32C40 35.3137 37.3137 38 34 38H22C18.6863 38 16 35.3137 16 32V16Z" fill="#F5F8FF"/>
+  <path d="M24 22L28.8 27.8L34 22" stroke="#1F4C90" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28.8 18V28" stroke="#1F4C90" stroke-width="2" stroke-linecap="round"/>
+  <text x="58" y="32" fill="#1F4C90" font-family="Inter, sans-serif" font-size="20" font-weight="700">She Can</text>
+</svg>

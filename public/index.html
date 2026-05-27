@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>She Can Foundation - Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <img src="assets/logo.svg" alt="She Can Foundation logo" />
+        <span>She Can Foundation</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#mission">Our Mission</a>
+        <a href="/admin">Admin Panel</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy fade-up">
+          <span class="eyebrow">She Can Foundation</span>
+          <h1>Empowering young girls through hope, opportunity, and community.</h1>
+          <p>Share your story, ask for support, or connect with our mission. Every message helps us build a brighter future.</p>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>800+</strong>
+              <small>girls reached</small>
+            </div>
+            <div class="stat-card">
+              <strong>15</strong>
+              <small>community programs</small>
+            </div>
+            <div class="stat-card">
+              <strong>100%</strong>
+              <small>learner support</small>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card contact-shell fade-up delay-1">
+          <div class="contact-intro">
+            <span class="card-eyebrow">Let’s connect</span>
+            <h2>Send a message to the team</h2>
+            <p>We are here to listen, support, and help you take the next step.</p>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+            <span class="error-message" id="name-error"></span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <span class="error-message" id="email-error"></span>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+            <span class="error-message" id="message-error"></span>
+
+            <button type="submit">Submit Message</button>
+            <div class="success-message" id="success-message"></div>
+          </form>
+
+          <div class="admin-panel-note">
+            <p>Want to review submissions? Visit the <a href="/admin">Admin Panel</a>.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="mission" id="mission">
+        <div class="mission-headline fade-up">
+          <span class="eyebrow">Our mission</span>
+          <h2>Helping girls and families access education, mentorship, and hope.</h2>
+          <p>She Can Foundation supports learners through workshops, mentoring, and outreach — and your message helps shape every program.</p>
+        </div>
+
+        <div class="feature-grid fade-up delay-2">
+          <article class="feature-card">
+            <h3>Community support</h3>
+            <p>We listen to local stories and provide guidance that empowers girls to learn, grow, and succeed.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Learning opportunities</h3>
+            <p>From beginner coding sessions to career guidance, our programs are built for confidence and access.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Safe spaces</h3>
+            <p>We create positive, inclusive environments where every participant feels seen and valued.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
